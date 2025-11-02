@@ -1,0 +1,157 @@
+:root {
+    --white: #fff;
+    --primary: #123456;
+}
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 20px;
+    line-height: 1.2;
+    font-family: sans-serif;
+    font-weight: normal;
+  
+    background: linear-gradient(rgba(0, 0, 0, 0.622), rgba(0, 0, 0, 0.167)),
+    url("../img/img12.jpg");
+    padding: 2rem 0;
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+input {
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.8rem;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+}
+
+.btn {
+    background-color: var(--primary);
+    padding: 0.4rem 2rem;
+    color: var(--white);
+    border-radius: 0.4rem;
+}
+
+.input {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.form {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+}
+
+.todos {
+    counter-reset: number;
+    display: flex;
+    flex-direction: column;
+    grid-area: 1rem;
+}
+
+.todos li {
+    border-radius: 0.4rem;
+    padding: 0.8rem 1rem;
+    background-color: var(--white);
+    color: var(--primary);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px -0.3125rem var(--primary);
+}
+
+.todos li.complated {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.todos li::before {
+    content: counter(number);
+    counter-increment: number;
+    margin-right: 0.2rem;
+}
+
+.todos li span {
+    margin-right: 1rem;
+}
+
+.todos li div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto; 
+}
+
+.todos li time {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    align-self: end;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000bb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-btn {
+    align-self: end;
+}
+
+.hidden {
+    display: none;
+}
